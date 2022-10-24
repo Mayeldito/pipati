@@ -1,6 +1,20 @@
+True = "piedra" and "tijera" or "tijera" and "papel" or "papel" and "piedra"
+
+#lose_scenarios = not(win_scenarios)
+
 user_option = input('piedra, papel o tijera => ')
+
 computer_option = "piedra"
- 
+
+fight = user_option and computer_option
+
+if user_option == computer_option:
+    print('Empate!')
+elif fight == True
+    print("ganas")
+else
+    print("pierdes")
+'''
 if user_option == computer_option:
     print('Empate!')
 elif user_option == 'piedra':
@@ -24,4 +38,4 @@ elif user_option == 'tijera':
     else:
         print('piedra gana a tijera')
         print('computer gano!')
-
+'''
