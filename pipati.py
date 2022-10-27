@@ -1,5 +1,20 @@
+options = ("piedra", "papel", "tijera")
+
 user_option = input('piedra, papel o tijera => ')
+
+user_option = user_option.lower()
+
 computer_option = "piedra"
+
+while not user_option in options:
+    user_option = input("Elige una opcion valida -piedra, papel o tijera-: ")
+    user_option = user_option.lower()
+
+print("Jugador: ", user_option)
+
+print("Maquinita: ", computer_option)
+
+
  
 if user_option == computer_option:
     print('Empate!')
