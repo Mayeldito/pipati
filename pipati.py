@@ -1,20 +1,36 @@
+import random
+
+options = ("piedra", "papel", "tijera")
+
 win = ("piedratijera", "tijerapapel", "papelpiedra")
 
 user_option = input('piedra, papel o tijera => ')
 
 computer_option = "piedra"
 
+user_wins = 0
+
+comuputer_wins = 0
+
 fight = user_option + computer_option
 
+while user_wins or comuputer_wins < 4:
+    rounds = 1
 
-if user_option == computer_option:
-    print('Empate!')
+    print("Ronda", rounds,": ")
 
-elif fight in win:
-    print("gana user")
+    if user_option == computer_option:
+        print('Empate!')
 
-else:
-    print("gana computer")
+    elif fight in win:
+        print("gana user")
+        user_wins +=1
+
+    else:
+        print("gana computer")
+        comuputer_wins +=1
+
+    
 '''
 
 if user_option == computer_option:
