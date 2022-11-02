@@ -32,6 +32,7 @@ while user_wins != 2 and computer_wins != 2:
     while not user_option in options: 
         print("Elige una opcion valida: ")
         user_option = input('piedra, papel o tijera => ')
+        user_option = user_option.lower()
 
     computer_option = random.choice(options)
 
@@ -61,38 +62,7 @@ while user_wins != 2 and computer_wins != 2:
     rounds +=1
 
 if user_wins > computer_wins:
-    print("Ganar user")
+    print("Gana user")
 
 else: 
     print("gana computer")
-    
-'''
-
-if user_option == computer_option:
-    print('Empate!')
-
-elif user_option == 'piedra':
-    if computer_option == 'tijera':
-        print('piedra gana a tijera')
-        print('user gano!')
-    else:
-        print('Papel gana a piedra')
-        print('computer gano!')
-
-elif user_option == 'papel':
-    if computer_option == 'piedra':
-        print('papel gana a piedra')
-        print('user gano')
-    else:
-        print('tijera gana a papel')
-        print('computer gano!')
-
-elif user_option == 'tijera':
-    if computer_option == 'papel':
-        print('tijera gana a papel')
-        print('user gano!')
-    else:
-        print('piedra gana a tijera')
-        print('computer gano!')
-
-'''
