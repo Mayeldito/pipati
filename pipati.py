@@ -4,20 +4,46 @@ options = ("piedra", "papel", "tijera")
 
 win = ("piedratijera", "tijerapapel", "papelpiedra")
 
-user_option = input('piedra, papel o tijera => ')
-
-computer_option = "piedra"
+rounds = 1
 
 user_wins = 0
 
-comuputer_wins = 0
+computer_wins = 0
 
-fight = user_option + computer_option
+while user_wins != 2 and computer_wins != 2:
 
-while user_wins or comuputer_wins < 4:
-    rounds = 1
+    print("*" * 10)
 
-    print("Ronda", rounds,": ")
+    print("Ronda", rounds, ": ")
+
+    print("*" * 10)
+
+    print("Victorias de user: ", user_wins, "/ 2")
+
+    print("Victorias de computer: ", computer_wins, "/ 2")
+
+    print("*" * 10)
+
+    print("Elige una opcion: ")
+
+    user_option = input('piedra, papel o tijera => ')
+    user_option = user_option.lower()
+
+    while not user_option in options: 
+        print("Elige una opcion valida: ")
+        user_option = input('piedra, papel o tijera => ')
+
+    computer_option = random.choice(options)
+
+    print("*" * 10)
+
+    print("Opcion de user: ", user_option)
+
+    print("opcion de computer:", computer_option)
+
+    fight = user_option + computer_option
+
+    print("Resultado: ")
 
     if user_option == computer_option:
         print('Empate!')
@@ -28,8 +54,17 @@ while user_wins or comuputer_wins < 4:
 
     else:
         print("gana computer")
-        comuputer_wins +=1
+        computer_wins +=1
 
+    print("*" * 10)
+
+    rounds +=1
+
+if user_wins > computer_wins:
+    print("Ganar user")
+
+else: 
+    print("gana computer")
     
 '''
 
