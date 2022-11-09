@@ -10,8 +10,7 @@ user_wins = 0
 
 computer_wins = 0
 
-while user_wins != 2 and computer_wins != 2:
-
+def game_stats(rounds, user_wins, computer_wins):
     print("*" * 10)
 
     print("Ronda", rounds, ": ")
@@ -24,16 +23,27 @@ while user_wins != 2 and computer_wins != 2:
 
     print("*" * 10)
 
-    print("Elige una opcion: ")
+    print("Elige una opcion: ") 
 
+def player_options_selection(options):
     user_option = input('piedra, papel o tijera => ')
     user_option = user_option.lower()
 
-    while not user_option in options: 
+    while not user_option in options:
         print("Elige una opcion valida: ")
         user_option = input('piedra, papel o tijera => ')
 
     computer_option = random.choice(options)
+
+    return user_option, computer_option
+
+while user_wins != 2 and computer_wins != 2:
+
+    game_stats(rounds, user_wins, computer_wins)
+
+    player_options_selection(options)
+
+    user_option, computer_option = player_options_selection(options)
 
     print("*" * 10)
 
