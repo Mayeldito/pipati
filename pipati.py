@@ -1,11 +1,5 @@
 import random
 
-rounds = 1
-
-user_wins = 0
-
-computer_wins = 0
-
 def game_stats(rounds, user_wins, computer_wins):
     print("*" * 10)
 
@@ -62,18 +56,30 @@ def round_winner(user_option, computer_option, user_wins, computer_wins):
 
     return user_wins, computer_wins
 
-while user_wins != 2 and computer_wins != 2:
+def match_winner(user_wins, computer_wins):
+    if user_wins > computer_wins:
+        print("User gana la partida")
 
-    game_stats(rounds, user_wins, computer_wins)
+    else: 
+        print("Computer gana la partida")
 
-    user_option, computer_option = player_options_selection()
+def run_game():
+    rounds = 1
 
-    user_wins, computer_wins = round_winner(user_option, computer_option, user_wins, computer_wins)
+    user_wins = 0
 
-    rounds +=1
+    computer_wins = 0
 
-if user_wins > computer_wins:
-    print("User gana la partida")
+    while user_wins != 2 and computer_wins != 2:
 
-else: 
-    print("Computer gana la partida")
+        game_stats(rounds, user_wins, computer_wins)
+
+        user_option, computer_option = player_options_selection()
+
+        user_wins, computer_wins = round_winner(user_option, computer_option, user_wins, computer_wins)
+
+        rounds +=1
+
+    match_winner(user_wins, computer_wins)
+
+run_game()
