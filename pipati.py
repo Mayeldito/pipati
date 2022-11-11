@@ -1,7 +1,5 @@
 import random
 
-options = ("piedra", "papel", "tijeras")
-
 win = ("piedratijeras", "tijeraspapel", "papelpiedra")
 
 rounds = 1
